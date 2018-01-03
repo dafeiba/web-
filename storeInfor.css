@@ -68,6 +68,14 @@ body{
     margin-top: 30px;
     color: #ffff;
 }
+.headNavigation1 li:hover{
+    background-color: #ffff;
+    color: #934f0e;
+}
+.headNavigation2 li:hover{
+    background-color: #ffff;
+    color: #934f0e;
+}
 
 .image_1{
 
