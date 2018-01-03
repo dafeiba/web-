@@ -9,7 +9,7 @@ body{
 }
 .whole{
     width: 100%;
-    height: 1800px;
+    height: 1710px;
     text-align: center;
     
    
@@ -18,10 +18,9 @@ body{
 
 .whole_content{
     width: 1366px;
-    height: 1708px;
+    height: 1710px;
     margin:0 auto;
-   
- 
+    
 }
    
 .header{
@@ -87,7 +86,7 @@ body{
 
 .Main_content{
 
-    height: 834px;
+    height: 946px;
     width: 975px;
    
     margin-left: 192px;
@@ -99,23 +98,10 @@ body{
 
 }
 
-.content1 img{
-   
-    float: left;
-    width: 277px;
-    height: 221px;
 
-}
-.content1{
-    float: left;
-    width: 277px;
-    height: 368px;
-    margin-right: 40px;
-    color: #333333;
-    font-size: 13px;
-}
+
 .foot{
-    height: 115px;
+    height: 118px;
     width: 1366px;
    background-image: url("images/footer.gif");
  

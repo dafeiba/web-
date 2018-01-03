@@ -9,7 +9,7 @@ body{
 }
 .whole{
     width: 100%;
-    height: 1800px;
+    height: 1430px;
     text-align: center;
    
     
@@ -17,7 +17,7 @@ body{
 
 .whole_content{
     width: 1366px;
-    height: 1708px;
+    height: 1400px;
     margin:0 auto;
  
 }
@@ -72,18 +72,42 @@ body{
    
     background-image: url("images/banner/banner1.png");
 }
+.leftArrow{
+    float:left;
+
+    margin-top: 268px;
+}
+.rightArrow{
+    float:right;
+
+    margin-top: 268px;
+}
+ p{
+    font-size: 16px;
+    color: #333333;
+    line-height:30px;
+
+} 
 
 .Main_content{
-
-    height: 834px;
+  
+    height: 559px;
     width: 975px;
+   
    
     margin-left: 192px;
 
 }
+
 .Main_content_header{
     padding-top: 29px;
   margin-bottom: 47px;
+
+}
+.Main_content_Maincontent{
+    font-size: 16px;
+    color: #333333;
+    
 
 }
 
