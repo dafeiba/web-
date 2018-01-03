@@ -86,17 +86,71 @@ body{
 
 .Main_content{
 
-    height: 946px;
+
+    height: 951px;
     width: 975px;
    
     margin-left: 192px;
 
 }
+.content_head{
+   
+    width: 975px;
+    height:43px;
+  
+
+}
+.content_head h3{
+    padding-right: 49px;
+float: left;
+padding-top: 24px;
+font-size: 16px;
+
+}
+.nav_box{
+    width: 400px;
+    height: 40px;
+    padding-left: 390px;
+}
+.content_nav{
+  padding-top: 10px;
+    width: 975px;
+    height:30px;
+  
+
+}
+
+
+.content_nav p{
+   
+    margin-left: 24px;
+    font-size: 14px;
+    float: left;
+   
+
+
+}
 .Main_content_header{
     padding-top: 29px;
   margin-bottom: 47px;
+  width: 975px;
+  
+ 
 
 }
+.content_display img{
+    float: left;
+}
+.content_image{
+    margin-top: 41px;
+    
+}
+.content_image img{ 
+    margin-right: 40px;
+    float: left;
+    margin-bottom: 35px;
+}
+
 
 
 
