@@ -7,18 +7,65 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>首页</title>
     <link rel="stylesheet" type="text/css" href="firstPage.css" />
+
 </head>
 
 <body>
-    <div class="whole" >
+
+
+    <script>
+        var curIndex = 0;
+        //时间间隔(单位毫秒)，每秒钟显示一张，数组共有3张图片放在img文件夹下。
+        var timeInterval = 1000;
+        //定义一个存放照片位置的数组，可以放任意个，在这里放3个
+        var arr = new Array();
+        arr[0] = "images/banner/banner1.png";
+        arr[1] = "images/banner/banner2.png";
+        arr[2] = "images/banner/banner3.png";
+        // setInterval(changeImg, timeInterval);
+        function changeImg() {
+            //获得id名为d1的对象
+            var obj = document.getElementById("image_1");
+            if (curIndex == arr.length - 1) {
+                curIndex = 0;
+            } else {
+                curIndex += 1;
+            }
+            //设置d1的背景图片
+            obj.style.backgroundImage = "URL(" + arr[curIndex] + ")";       //显示对应的图片
+        }
+        function changeImg1() {
+            //获得id名为d1的对象
+            var obj = document.getElementById("image_1");
+            if (curIndex == 0) {
+                curIndex = 2;
+            } else {
+                curIndex -= 1;
+            }
+            //设置d1的背景图片
+            obj.style.backgroundImage = "URL(" + arr[curIndex] + ")";       //显示对应的图片
+        }
+
+
+    </script>
+
+
+
+    <div class="whole">
         <div class="whole_content">
             <div class="header">
                 <div class="head_content">
 
                     <ul class="headNavigation1">
-                        <li ><a onMouseOver="this.style.color='#934f0e'" onMouseOut="this.style.color='#ffff'" href="firstPage.html" style="text-decoration:none;color:#934f0e">首页</a></li>
-                        <li > <a onMouseOver="this.style.color='#934f0e'" onMouseOut="this.style.color='#ffff'" href="BrandProduct.html" style="text-decoration:none;color:#934f0e">品牌和产品</a></li>
-                        <li >联营合作</li>
+                        <li>
+                            <a onMouseOver="this.style.color='#934f0e'" onMouseOut="this.style.color='#ffff'" href="firstPage.html"
+                                style="text-decoration:none;color:#ffff">首页</a>
+                        </li>
+                        <li>
+                            <a onMouseOver="this.style.color='#934f0e'" onMouseOut="this.style.color='#ffff'" href="BrandProduct.html"
+                                style="text-decoration:none;color:#ffff">品牌和产品</a>
+                        </li>
+                        <li>联营合作</li>
 
 
 
@@ -28,8 +75,14 @@
 
 
                         <li> 配套服务</li>
-                        <li><a onMouseOver="this.style.color='#934f0e'" onMouseOut="this.style.color='#ffff'" href="storeInfor.html" style="text-decoration:none;color:#934f0e">门店信息</a></li>
-                        <li><a onMouseOver="this.style.color='#934f0e'" onMouseOut="this.style.color='#ffff'" href="AboutUs.html" style="text-decoration:none;color:#934f0e">关于我们</a></li>
+                        <li>
+                            <a onMouseOver="this.style.color='#934f0e'" onMouseOut="this.style.color='#ffff'" href="storeInfor.html"
+                                style="text-decoration:none;color:#ffff">门店信息</a>
+                        </li>
+                        <li>
+                            <a onMouseOver="this.style.color='#934f0e'" onMouseOut="this.style.color='#ffff'" href="AboutUs.html"
+                                style="text-decoration:none;color:#ffff">关于我们</a>
+                        </li>
 
                     </ul>
 
@@ -37,12 +90,12 @@
 
             </div>
 
-            <div class="image_1">
+            <div class="image_1" id="image_1">
                 <div class="leftArrow">
-                    <img src="images/turnLeft.png">
+                    <img src="images/turnLeft.png" onclick = "changeImg1()" >
                 </div>
                 <div class="rightArrow">
-                    <img src="images/turnRight.png">
+                    <img src="images/turnRight.png" onclick = "changeImg()">
                 </div>
 
 
