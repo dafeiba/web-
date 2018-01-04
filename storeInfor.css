@@ -84,6 +84,16 @@ body{
    
     background-image: url("images/banner/banner1.png");
 }
+.leftArrow{
+    float:left;
+
+    margin-top: 268px;
+}
+.rightArrow{
+    float:right;
+
+    margin-top: 268px;
+}
 
 .Main_content{
 

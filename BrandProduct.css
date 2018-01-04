@@ -154,11 +154,22 @@ font-size: 16px;
     
 }
 .content_image img{ 
-    margin-right: 40px;
+    margin-right: 20px;
     float: left;
-    margin-bottom: 35px;
+    margin-bottom: 20px;
 }
+ .important{
+margin-bottom: 20px;
+    float: left;
+   height: 224px;
+   width: 560px;
+   font-size: 14px;
+   text-align: left;
 
+} 
+.important1{
+  color:  #934f0e;
+}
 
 
 

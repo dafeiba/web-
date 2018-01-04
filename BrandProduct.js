@@ -7,16 +7,19 @@ arr[1] = "images/banner/banner2.png";
 arr[2] = "images/banner/banner3.png";
 
 $(document).ready(function(){
-    $("#image_2").click(function(){
-        if (curIndex == arr.length - 1) {
-            curIndex = 0;
-        } else {
-            curIndex += 1;
-        }
-        $("#h1").toggle(function () {
-            $("#h1").css("background-image", "url('./20110528073501b54e6.jpg')");
-        }
-
-
-    });
+    // if (curIndex == arr.length - 1) {
+    //     curIndex = 0;
+    // } else {
+    //     curIndex += 1;
+    // }
+    
+    // $(function () {
+    //     $("#image_1").click(function () {
+    //         $("#image_2").css("background-image", "URL(" + arr[curIndex] + ")");
+    //     })
+    // });
+    $("p#image_1").click(function(){
+        $(this).hide();
+      });
+        
   });

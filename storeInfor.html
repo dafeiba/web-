@@ -7,38 +7,91 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>店面信息</title>
     <link rel="stylesheet" type="text/css" href="storeInfor.css" />
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
 
 <body>
+    <script>
+        var curIndex = 0;
+
+        //定义一个存放照片位置的数组，可以放任意个，在这里放3个
+        var arr = new Array();
+        arr[0] = "images/banner/banner1.png";
+        arr[1] = "images/banner/banner2.png";
+        arr[2] = "images/banner/banner3.png";
+
+        $(document).ready(function () {
+
+
+            // $(function () {
+            $("#image_3").click(function () {
+                if (curIndex == arr.length - 1) {
+                    curIndex = 0;
+                } else {
+                    curIndex += 1;
+                }
+                $("#image_1").css("background-image", "URL(" + arr[curIndex] + ")");
+            })
+
+
+            // });
+            //    $("#image_1").click(function(){
+            //        $(this).hide();
+            //     //  });
+            $("#image_2").click(function () {
+                if (curIndex == 0) {
+                    curIndex = 2;
+                } else {
+                    curIndex -= 1;
+                }
+                $("#image_1").css("background-image", "URL(" + arr[curIndex] + ")");
+            })
+
+        });
+    </script>
     <div class="whole">
         <div class="whole_content">
             <div class="header">
                 <div class="head_content">
 
-                        <ul class="headNavigation1">
-                                <li ><a href="firstPage.html" style="text-decoration:none;color:#ffff">首页</a></li>
-                                <li > <a href="BrandProduct.html" style="text-decoration:none;color:#ffff">品牌和产品</a></li>
-                                <li >联营合作</li>
-        
-        
-        
-                            </ul>
-        
-                            <ul class="headNavigation2">
-        
-        
-                                <li> 配套服务</li>
-                                <li><a href="storeInfor.html" style="text-decoration:none;color:#ffff">门店信息</a></li>
-                                <li><a href="AboutUs.html" style="text-decoration:none;color:   #ffff;">关于我们</a></li>
-        
-                            </ul>
+                    <ul class="headNavigation1">
+                        <li>
+                            <a href="firstPage.html" style="text-decoration:none;color:#ffff">首页</a>
+                        </li>
+                        <li>
+                            <a href="BrandProduct.html" style="text-decoration:none;color:#ffff">品牌和产品</a>
+                        </li>
+                        <li>联营合作</li>
+
+
+
+                    </ul>
+
+                    <ul class="headNavigation2">
+
+
+                        <li> 配套服务</li>
+                        <li>
+                            <a href="storeInfor.html" style="text-decoration:none;color:#ffff">门店信息</a>
+                        </li>
+                        <li>
+                            <a href="AboutUs.html" style="text-decoration:none;color:   #ffff;">关于我们</a>
+                        </li>
+
+                    </ul>
 
                 </div>
 
             </div>
 
-            <div class="image_1">
+            <div class="image_1" id="image_1">
+                <div class="leftArrow">
+                    <img src="images/turnLeft.png" id="image_2">
+                </div>
+                <div class="rightArrow">
+                    <img src="images/turnRight.png" id="image_3">
 
+                </div>
             </div>
 
             <div class="Main_content">
@@ -53,8 +106,8 @@
                             <p>重庆/龙湖时代天街店-重庆市渝中区龙湖时代天街购物广场C馆L1-55B</p>
                             <img src="images/showPicture1.png">
                             <h3 style="text-align:right">浙江省</h3>
-                            <p>杭州、/吴山总店-杭州市延安南路10号（吴山广场） 
-                                    <br>杭州/文三店———杭州市文三路463号（东方通信大厦对面）
+                            <p>杭州、/吴山总店-杭州市延安南路10号（吴山广场）
+                                <br>杭州/文三店———杭州市文三路463号（东方通信大厦对面）
                                 <br> 宁波/北仑店———宁波市北仑区新契银泰城（泰山路中河交叉口）
                                 <br> 湖州/人民广场店——苕溪西路57号（人民广场公交站）
                                 <br> 绍兴/诸瓒店—-簪阳市272号（浣江路中学对面）
@@ -72,35 +125,36 @@
 
                             </p>
                             <h3> 广东省</h3>
-                           <p> 绍兴/诸瓒店—-簪阳市272号（浣江路中学对面）
-                            <br> 宁波/北仑店———宁波市北仑区新契银泰城（泰山路中河交叉口）
-                            <br> 湖州/人民广场店——苕溪西路57号（人民广场公交站）
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
+                            <p> 绍兴/诸瓒店—-簪阳市272号（浣江路中学对面）
+                                <br> 宁波/北仑店———宁波市北仑区新契银泰城（泰山路中河交叉口）
+                                <br> 湖州/人民广场店——苕溪西路57号（人民广场公交站）
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
                             </p>
 
                             <h3> 河南省</h3>
 
-                           <p> 宁波/北仑店———宁波市北仑区新契银泰城（泰山路中河交叉口）
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <h3> 福建省</h3>
-                            绍兴/诸瓒店—-簪阳市272号（浣江路中学对面）
-                            <br> 宁波/北仑店———宁波市北仑区新契银泰城（泰山路中河交叉口）
-                            <br>
-                            <br>
-                            <br>
-                            <br></p>
+                            <p> 宁波/北仑店———宁波市北仑区新契银泰城（泰山路中河交叉口）
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <h3> 福建省</h3>
+                                绍兴/诸瓒店—-簪阳市272号（浣江路中学对面）
+                                <br> 宁波/北仑店———宁波市北仑区新契银泰城（泰山路中河交叉口）
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                            </p>
                             <h3> 内蒙古</h3>
 
 
-                           <p> 湖州/人民广场店——苕溪西路57号（人民广场公交站）</p>
+                            <p> 湖州/人民广场店——苕溪西路57号（人民广场公交站）</p>
                             <br>
                         </div>
                     </div>
@@ -114,7 +168,8 @@
                         <br>
                         <br>
                         <br>
-                        <br><p>
+                        <br>
+                        <p>
                             重庆/协信星光天地店-重庆市渝中区大坪协信星光天地商场L4-017/018
                         </p>
                         <img src="images/showPicture1.png">
@@ -134,8 +189,8 @@
                             </p>
                             <h3> 江苏省</h3>
                             <p>
-                            绍兴/诸瓒店—-簪阳市272号（浣江路中学对面）
-                            <br> 湖州/人民广场店——苕溪西路57号（人民广场公交站）</p>
+                                绍兴/诸瓒店—-簪阳市272号（浣江路中学对面）
+                                <br> 湖州/人民广场店——苕溪西路57号（人民广场公交站）</p>
 
                             <br>
                             <br>
@@ -145,7 +200,7 @@
 
                             <h3> 湖北省</h3>
 
-                           <p>宁波/北仑店———宁波市北仑区新契银泰城（泰山路中河交叉口）</p> 
+                            <p>宁波/北仑店———宁波市北仑区新契银泰城（泰山路中河交叉口）</p>
                             <br>
                             <br>
                             <br>
@@ -154,19 +209,20 @@
                             <br>
                             <h3> 甘肃省</h3>
 
-                        <p>   宁波/北仑店———宁波市北仑区新契银泰城（泰山路中河交叉口）</p> 
-                           
+                            <p> 宁波/北仑店———宁波市北仑区新契银泰城（泰山路中河交叉口）</p>
+
                             <br>
                             <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <h3>沙特阿拉伯</h3>
+                            <p> 湖州/人民广场店——苕溪西路57号（人民广场公交站）
+                                <br> 绍兴/诸瓒店—-簪阳市272号（浣江路中学对面）
+                                <br> 绍兴/诸瓒店—-簪阳市272号（浣江路中学对面）
                                 <br>
-                                <br>
-                                    <br>
-                                    <br>
-                                    <h3>沙特阿拉伯</h3>
-                             <p>       湖州/人民广场店——苕溪西路57号（人民广场公交站）
-                                    <br> 绍兴/诸瓒店—-簪阳市272号（浣江路中学对面）
-                                    <br> 绍兴/诸瓒店—-簪阳市272号（浣江路中学对面）
-                                    <br></p>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -177,11 +233,11 @@
             <div class="foot">
 
                 <div class="foot_right"></div>
-    
+
             </div>
         </div>
 
-       
+
     </div>
     </div>
 </body>

@@ -7,11 +7,70 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>品牌与产品</title>
     <link rel="stylesheet" type="text/css" href="BrandProduct.css" />
-    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src = "BrandProduct.js"></script>
+
+
 </head>
 
 <body>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <script>
+        var curIndex = 0;
+
+        //定义一个存放照片位置的数组，可以放任意个，在这里放3个
+        var arr = new Array();
+        arr[0] = "images/banner/banner1.png";
+        arr[1] = "images/banner/banner2.png";
+        arr[2] = "images/banner/banner3.png";
+
+        $(document).ready(function () {
+
+
+            // $(function () {
+            $("#image_3").click(function () {
+                if (curIndex == arr.length - 1) {
+                    curIndex = 0;
+                } else {
+                    curIndex += 1;
+                }
+                $("#image_1").css("background-image", "URL(" + arr[curIndex] + ")");
+
+            });
+
+
+            // });
+            //    $("#image_1").click(function(){
+            //        $(this).hide();
+            //     //  });
+            $("#image_2").click(function () {
+                if (curIndex == 0) {
+                    curIndex = 2;
+                } else {
+                    curIndex -= 1;
+                }
+                $("#image_1").css("background-image", "URL(" + arr[curIndex] + ")");
+            });
+
+            $("#showP1").mouseenter(function () {
+               
+                $("#showP2").hide();
+                $("#showP3").hide();
+                $("#showP1").after("<h3 id='hhh'>美味甜甜圈<h3><p id='ppp'>甜甜圈，百滋百特秘制配方，纯手工制作，每一个圈都堪称经典。低糖低油，口感松软，外形精致。甜甜圈，百滋百特秘制配方，纯手工制作，每一个圈都堪称经典。低糖低油，外形精致...甜甜圈，百滋百特秘制配方，纯手工制作，每一个圈都堪称经典。低糖低油甜甜圈，百滋百特秘制配方，纯手工制作，每一个圈都堪称经典。低糖低油，口感松软，外形精致。甜甜圈，百滋百特秘制配方，纯手工制作，每一个圈都堪称经典。低糖低油低糖低油甜甜圈，百滋百特秘制配方，纯手工制作，每一个圈都堪称经典。低糖低油，口感松软，外形精致。甜甜圈，百滋百特秘制配方，纯手工制作，每一个圈都堪称经典。<br>低糖低油低糖低油甜甜圈，百滋百特秘制配方，纯手工制作，每一个圈都堪称经典。低糖低油，口感松软，外形精致。甜甜圈，百滋百特秘制配方，纯手工制作</p>");
+                $("#ppp").addClass("important");
+                 $("#hhh").addClass("important1");
+
+            });
+
+            $("#showP1").mouseleave(function(){
+                $("#showP2").show();
+                $("#showP3").show();
+                $("#ppp").hide();
+                $("#hhh").hide();
+
+});
+
+        });
+    </script>
 
 
 
@@ -22,12 +81,10 @@
 
                     <ul class="headNavigation1">
                         <li>
-                            <a onMouseOver="this.style.color='#934f0e'" onMouseOut="this.style.color='#ffff'" href="firstPage.html"
-                                style="text-decoration:none;color:#ffff">首页</a>
+                            <a onMouseOver="this.style.color='#934f0e'" onMouseOut="this.style.color='#ffff'" href="firstPage.html" style="text-decoration:none;color:#ffff">首页</a>
                         </li>
                         <li>
-                            <a onMouseOver="this.style.color='#934f0e'" onMouseOut="this.style.color='#ffff'" href="BrandProduct.html"
-                                style="text-decoration:none;color:#ffff">品牌和产品</a>
+                            <a onMouseOver="this.style.color='#934f0e'" onMouseOut="this.style.color='#ffff'" href="BrandProduct.html" style="text-decoration:none;color:#ffff">品牌和产品</a>
                         </li>
                         <li>联营合作</li>
 
@@ -40,12 +97,10 @@
 
                         <li> 配套服务</li>
                         <li>
-                            <a onMouseOver="this.style.color='#934f0e'" onMouseOut="this.style.color='#ffff'" href="storeInfor.html"
-                                style="text-decoration:none;color:#ffff">门店信息</a>
+                            <a onMouseOver="this.style.color='#934f0e'" onMouseOut="this.style.color='#ffff'" href="storeInfor.html" style="text-decoration:none;color:#ffff">门店信息</a>
                         </li>
                         <li>
-                            <a onMouseOver="this.style.color='#934f0e'" onMouseOut="this.style.color='#ffff'" href="AboutUs.html"
-                                style="text-decoration:none;color:#ffff">关于我们</a>
+                            <a onMouseOver="this.style.color='#934f0e'" onMouseOut="this.style.color='#ffff'" href="AboutUs.html" style="text-decoration:none;color:#ffff">关于我们</a>
                         </li>
 
                     </ul>
@@ -56,10 +111,10 @@
 
             <div class="image_1" id="image_1">
                 <div class="leftArrow">
-                    <img src="images/turnLeft.png"  id = "image_2" >
+                    <img src="images/turnLeft.png" id="image_2">
                 </div>
                 <div class="rightArrow">
-                    <img src="images/turnRight.png" id = "image_3">
+                    <img src="images/turnRight.png" id="image_3">
 
                 </div>
             </div>
@@ -97,15 +152,15 @@
                 </div> -->
                 <div class="content_image">
 
-                    <img src="images/brand-content/showP1.png">
-                    <img src="images/brand-content/showP2.png">
-                    <img src="images/brand-content/showP3.png">
-                    <img src="images/brand-content/showP4.png">
-                    <img src="images/brand-content/showP5.png">
-                    <img src="images/brand-content/showP6.png">
-                    <img src="images/brand-content/showP7.png">
-                    <img src="images/brand-content/showP8.png">
-                    <img src="images/brand-content/showP9.png">
+                    <img src="images/brand-content/showP1.png" id="showP1">
+                    <img src="images/brand-content/showP2.png" id="showP2">
+                    <img src="images/brand-content/showP3.png" id="showP3">
+                    <img src="images/brand-content/showP4.png" id="showP4">
+                    <img src="images/brand-content/showP5.png" id="showP5">
+                    <img src="images/brand-content/showP6.png" id="showP6">
+                    <img src="images/brand-content/showP7.png" id="showP7">
+                    <img src="images/brand-content/showP8.png" id="showP8">
+                    <img src="images/brand-content/showP9.png" id="showP9">
 
 
                 </div>
