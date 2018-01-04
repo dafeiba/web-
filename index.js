@@ -4,6 +4,9 @@ function addList(){
     var oPwd = document.getElementById('pwd').value;
     var oBirth = document.getElementById('birth').value;
     var oAddre = document.getElementById('addre').value;
+    var oYear = document.getElementById('year').value;
+    var oAge = document.getElementById('age').value;
+
     var oTr = document.createElement('tr');
     var oTd1 = document.createElement('td');
     var oInput = document.createElement('input');
@@ -20,6 +23,10 @@ function addList(){
     oTd5.innerHTML = oBirth;
     var oTd6 = document.createElement('td');
     oTd6.innerHTML = oAddre;
+    var oTd8 = document.createElement('td');
+    oTd8.innerHTML = oYear;
+    var oTd9 = document.createElement('td');
+    oTd9.innerHTML = oAge;
     var oTd7 = document.createElement('td');
     var oInput2 = document.createElement('input');
     var oInput3 = document.createElement('input');
@@ -39,7 +46,10 @@ function addList(){
     oTr.appendChild(oTd4);
     oTr.appendChild(oTd5);
     oTr.appendChild(oTd6);
+    oTr.appendChild(oTd8);
+     oTr.appendChild(oTd9);
     oTr.appendChild(oTd7);
+    
     var olistTable = document.getElementById('listTable');
     olistTable.appendChild(oTr);
 }
