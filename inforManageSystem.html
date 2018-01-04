@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="inforManageSystem.js"></script>
+</head>
+
+<body>
+    <table class="table table-hover table-bordered" id="mytable">
+       
+
+        <thead>
+            <tr>
+                <th>选中</th>
+                <th>序号</th>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>学院</th>
+                <th>专业</th>
+                <th>年级</th>
+                <th>年龄</th>
+                <th>编辑</th>
+
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" onclick="checkAll(this)" />
+                </td>
+                <td colspan="6">
+                        <input type="button" name=" " value="增加"  class="btn btn-primary" onclick="addRow()">
+                    <a href="javascript:;" class="btn btn-danger" role="button" onclick="delAll(this)">全部删除</a>
+                </td>
+            </tr>
+        </thead>
+        <tbody id="listTable">
+            <tr>
+                <td>
+                    <input type="checkbox" name="item" />
+                </td>
+                <td>10</td>
+                <td>11603080110</td>
+                <td>黄飞</td>
+                <td>计算机与工程学院7</td>
+                <td>软件工程</td>
+                <td>
+                    16
+                </td>
+                <td>19</td>
+                <td>
+                        <input type="button" name=" " value="修改"  class="btn btn-danger">
+                        <button class="btn btn-danger">删除 </button>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
