@@ -38,6 +38,8 @@ function addList(){
     oInput3.setAttribute('type','button');
     oInput3.setAttribute('value','修改');
     oInput3.setAttribute('onclick','modify(this)');
+    oInput3.setAttribute('data-toggle','modal');
+    oInput3.setAttribute('data-target','#myModal');
     oInput3.className = 'btn btn-info';
     oTd7.appendChild(oInput2);
     oTd7.appendChild(oInput3);
