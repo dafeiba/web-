@@ -42,7 +42,7 @@
                 <td>
                     <input type="checkbox" name="item" />
                 </td>
-                <td>10</td>
+                <td>1</td>
                 <td>11603080110</td>
                 <td>黄飞</td>
                 <td>计算机科学工程学院</td>
@@ -53,7 +53,7 @@
                 
                 <td>
                     <input type="button" name="" value="删除" class="btn btn-danger" onclick="del(this)" />
-                    <input type="button" name="" value="修改" class="btn btn-info" onclick="modify(this)" />
+                    <input type="button" name="" value="修改" class="btn btn-info"   data-target="#myModal" data-toggle="modal"/>
                 </td>
             </tr>
         </tbody>
@@ -107,7 +107,70 @@
                                 <td colspan="2">
                                     <input type="reset" value="重置" class="btn btn-primary" id="reset" />   
                                     <input type="button" value="添加"  class="btn btn-success" id="add"  onclick="addList()" />
-                                    <input type="button" value="更新"  class="btn btn-info" id=""  onclick="update()" />
+                                    <input type="button" value="更新"  class="btn btn-info" id=""   onclick="modify()" />
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+
+                <!-- 模态框底部 -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="myModal1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- 模态框头部 -->
+                <div class="modal-header">
+                    <h4 class="modal-title">增加</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- 模态框主体 -->
+                <div class="modal-body">
+                    <form>
+                        <table class="table table-hover table-bordered">
+                            <tr>
+                                <th>序号</th>
+                                <td><input type="text" name="" class="form-control" id="num" /></td>
+                            </tr>
+                            <tr>
+                                <th>学号</th>
+                                <td><input type="text" name="" class="form-control" id="username" /></td>
+                            </tr>
+                            <tr>
+                                <th>姓名</th>
+                                <td><input type="password" name="" class="form-control" id="pwd" /></td>
+                            </tr>
+                            <tr>
+                                <th>学院</th>
+                                <td><input type="text" name="" class="form-control" id="birth" /></td>
+                            </tr>
+                            <tr>
+                                <th>专业</th>
+                                <td><input type="text" name="" class="form-control" id="addre" /></td>
+                            </tr>
+                            <tr>
+                                <th>年级</th>
+                                <td><input type="text" name="" class="form-control" id="year" /></td>
+                            </tr>
+                            <tr>
+                                <th>年龄</th>
+                                <td><input type="text" name="" class="form-control" id="age" /></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    
+                                    <input type="button" value="更新"  class="btn btn-info" id=""  onclick="modify(this)" />
                                 </td>
                             </tr>
                         </table>

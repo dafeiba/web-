@@ -6,6 +6,7 @@ function addList(){
     var oAddre = document.getElementById('addre').value;
     var oYear = document.getElementById('year').value;
     var oAge = document.getElementById('age').value;
+    
 
     var oTr = document.createElement('tr');
     var oTd1 = document.createElement('td');
@@ -54,9 +55,82 @@ function addList(){
     olistTable.appendChild(oTr);
 }
 
-function openpage(htmlurl) 
-{
-    var newwin=window.open(htmlurl,"newWin");
-    newWin.focus();
-    return false;
+function del(obj){
+    var oParentnode = obj.parentNode.parentNode;
+    var olistTable = document.getElementById('listTable');
+    olistTable.removeChild(oParentnode);
+}
+
+function checkAll(c){
+    var status = c.checked;
+    var oItems = document.getElementsByName('item');
+    for(var i=0;i<oItems.length;i++){
+        oItems[i].checked=status;
+    }
+}
+//delAll功能
+function delAll(){
+    var olistTable = document.getElementById('listTable');
+    var items = document.getElementsByName("item");
+    for(var j=0;j<items.length;j++){    
+        if(items[j].checked)//如果item被选中
+        {
+            var oParentnode = items[j].parentNode.parentNode;
+            olistTable.removeChild(oParentnode);
+            j--;
+        }
+    }
+}
+function modify(obj){
+    var oNum = document.getElementById('num');
+    var oUser = document.getElementById('username');
+    var oPwd = document.getElementById('pwd');
+    var oBirth = document.getElementById('birth');
+    var oAddre = document.getElementById('addre');
+    var oTr = obj.parentNode.parentNode;
+    var aTd = oTr.getElementsByTagName('td');
+    console.log("11"+oNum.value);
+    rowIndex = obj.parentNode.parentNode.rowIndex;  
+      aTd[1].innerHTML = oNum.value;
+    oUser.value = aTd[2].innerHTML;
+    oPwd.value = aTd[3].innerHTML;
+    oBirth.value = aTd[4].innerHTML;
+    oAddre.value = aTd[5].innerHTML;
+
+    // var table = document.getElementById("listTable");
+    // var child = table.getElementsByTagName("tr")[this.index + 1];
+    // var oNum = document.getElementById('num').value;
+    // var oUser = document.getElementById('username').value;
+    // var oPwd = document.getElementById('pwd').value;
+    // var oBirth = document.getElementById('birth').value;
+    // var oAddre = document.getElementById('addre').value;
+    // var oYear = document.getElementById('year').value;
+    // var oAge = document.getElementById('age').value;
+
+    // var oTr = document.createElement('tr');
+    // var oTd1 = document.createElement('td');
+    // var oInput = document.createElement('input');
+    // console.log(oAge);
+
+    
+    
+    //alert(i);
+
+}
+//更新功能
+function update(){
+    var oNum = document.getElementById('num');
+    var oUser = document.getElementById('username');
+    var oPwd = document.getElementById('pwd');
+    var oBirth = document.getElementById('birth');
+    var oAddre = document.getElementById('addre');
+    var oMytable = document.getElementById('mytable');
+    //alert(rowIndex);
+    //var aTd = rowIndex.cells;
+    console.log(oMytable.rows[rowIndex].cells)
+    oMytable.rows[rowIndex].cells[1].innerHTML = oNum.value;
+    oMytable.rows[rowIndex].cells[2].innerHTML = oUser.value;
+    oMytable.rows[rowIndex].cells[3].innerHTML = oPwd.value;
+    oMytable.rows[rowIndex].cells[4].innerHTML = oBirth.value;
+    oMytable.rows[rowIndex].cells[5].innerHTML = oAddre.value;
 }
