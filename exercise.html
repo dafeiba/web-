@@ -53,7 +53,7 @@
                 
                 <td>
                     <input type="button" name="" value="删除" class="btn btn-danger" onclick="del(this)" />
-                    <input type="button" name="" value="修改" class="btn btn-info"   data-toggle="modal" data-target="#myModal"/>
+                    <input type="button" name="" value="修改" class="btn btn-info"   data-toggle="modal" data-target="#myModal" onclick="modify(this)">
                 </td>
             </tr>
         </tbody>
@@ -85,7 +85,7 @@
                             </tr>
                             <tr>
                                 <th>姓名</th>
-                                <td><input type="password" name="" class="form-control" id="pwd" /></td>
+                                <td><input type="text" name="" class="form-control" id="pwd" /></td>
                             </tr>
                             <tr>
                                 <th>学院</th>
@@ -107,7 +107,7 @@
                                 <td colspan="2">
                                     <input type="reset" value="重置" class="btn btn-primary" id="reset" />   
                                     <input type="button" value="添加"  class="btn btn-success" id="add"  onclick="addList()" />
-                                    <input type="button" value="更新"  class="btn btn-info" id=""   onclick="modify(listTable)" />
+                                    <input type="button" value="更新"  class="btn btn-info" id=""  onclick="update()" />
                                 </td>
                             </tr>
                         </table>

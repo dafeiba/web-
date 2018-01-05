@@ -48,7 +48,7 @@ function addList(){
     oTr.appendChild(oTd5);
     oTr.appendChild(oTd6);
     oTr.appendChild(oTd8);
-     oTr.appendChild(oTd9);
+    oTr.appendChild(oTd9);
     oTr.appendChild(oTd7);
     
     var olistTable = document.getElementById('listTable');
@@ -84,19 +84,24 @@ function delAll(){
 function modify(obj){
 
     var oNum = document.getElementById('num');
-    var oUser = document.getElementById('username');
-    var oPwd = document.getElementById('pwd');
-    var oBirth = document.getElementById('birth');
-    var oAddre = document.getElementById('addre');
-    var oTr = obj.parentNode.parentNode;
-    var aTd = oTr.getElementsByTagName('td');
-    console.log("11"+oNum.value);
-    rowIndex = obj.parentNode.parentNode.rowIndex;  
-      aTd[1].innerHTML = oNum.value;
-      aTd[2].innerHTML = oUser.value;
-      aTd[3].innerHTML = oPwd.value;
-     aTd[4].innerHTML = oBirth.value;
-     aTd[5].innerHTML  = oAddre.value;
+        var oUser = document.getElementById('username');
+        var oPwd = document.getElementById('pwd');
+        var oBirth = document.getElementById('birth');
+        var oAddre = document.getElementById('addre');
+        var oYear = document.getElementById('year');
+        var oAge = document.getElementById('age');
+
+        var oTr = obj.parentNode.parentNode;
+        var aTd = oTr.getElementsByTagName('td');
+        rowIndex = obj.parentNode.parentNode.rowIndex;  
+        oNum.value = aTd[1].innerHTML;
+        oUser.value = aTd[2].innerHTML;
+        oPwd.value = aTd[3].innerHTML;
+        oBirth.value = aTd[4].innerHTML;
+        oAddre.value = aTd[5].innerHTML;
+        oYear.value =  aTd[6].innerHTML;
+        oAge.value = aTd[7].innerHTML;
+        console.log(aTd[4].innerHTML);
      
 
     // var table = document.getElementById("listTable");
@@ -126,6 +131,8 @@ function update(){
     var oPwd = document.getElementById('pwd');
     var oBirth = document.getElementById('birth');
     var oAddre = document.getElementById('addre');
+    var oYear = document.getElementById('year');
+    var oAge = document.getElementById('age');
     var oMytable = document.getElementById('mytable');
     //alert(rowIndex);
     //var aTd = rowIndex.cells;
@@ -135,4 +142,6 @@ function update(){
     oMytable.rows[rowIndex].cells[3].innerHTML = oPwd.value;
     oMytable.rows[rowIndex].cells[4].innerHTML = oBirth.value;
     oMytable.rows[rowIndex].cells[5].innerHTML = oAddre.value;
+    oMytable.rows[rowIndex].cells[6].innerHTML = oYear.value;
+    oMytable.rows[rowIndex].cells[7].innerHTML = oAge.value;
 }
