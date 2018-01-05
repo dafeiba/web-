@@ -36,7 +36,7 @@ function display(){
         var oAddre = students[i].grade+'';
         var oYear = students[i].clazz+'';
         var oAge = students[i].age + "";
-        addList(oNum,oUser,oPwd,oBirth,oAddre,oYear,oAge)
+        addList(oNum,oUser,oPwd,oBirth,oAddre,oYear,oAge);
     }
     // var lines=Math.ceil(arr.length/col);//很关键的一步，这里为生成表格的行数  
     // var str="<table><tbody>";//表头  
@@ -131,6 +131,7 @@ function addList(oNum,oUser,oPwd,oBirth,oAddre,oYear,oAge){
     console.log(oTr)
     olistTable.appendChild(oTr);
 }
+
 
 function del(obj){
     rowIndex = obj.parentNode.parentNode.rowIndex;  
