@@ -1,4 +1,61 @@
-function addList(){
+//学生信息类
+function Studtent(student_id, name, college, major, grade, clazz, age) {
+    this.student_id = student_id;
+    this.name = name;
+    this.college = college;
+    this.major = major;
+    this.grade = grade;
+    this.clazz = clazz;
+    this.age = age;
+    this.toWatchString = function () {
+        return student_id + name + college + major + major + grade + clazz + age;
+    }
+}
+
+
+var students = [new Studtent("1", "Mike", "Computer", "CS", '2016', '2', '20'), 
+    new Studtent("2", "Tom", "Computer", "CS", 2015, 2, 20), 
+    new Studtent("3", "James", "Sport", "NBA", 2003, 2, 33), 
+    new Studtent("4", "Curry", "Sport", "NBA", 2007, 2, 29), 
+    new Studtent("5", "Leonard", "Sport", "NBA", 2007, 2, 29),
+    new Studtent("6", "Westbrook", "Sport", "NBA", 2007, 2, 29),
+    new Studtent("7", "Davis", "Sport", "NBA", 2007, 2, 29)
+        ];
+// var myArray = new Array();
+// for(var i = 0; i < 25; i++){
+//     myArray[i] = i;
+// }
+// var col = 7;
+
+function display(){
+    for(var i = 0; i < students.length; i++){
+        var oNum = students[i].student_id;
+        var oUser = students[i].name;
+        var oPwd = students[i].college;
+        var oBirth = students[i].major;
+        var oAddre = students[i].grade+'';
+        var oYear = students[i].clazz+'';
+        var oAge = students[i].age + "";
+        addList(oNum,oUser,oPwd,oBirth,oAddre,oYear,oAge)
+    }
+    // var lines=Math.ceil(arr.length/col);//很关键的一步，这里为生成表格的行数  
+    // var str="<table><tbody>";//表头  
+    // for (var j=0;j<lines;j++){//遍历表格行  
+    // str+="<tr>";  
+    // for (var k=0;k<col;k++){//遍历表格列  
+    // str+="<td>";  
+    // if(typeof arr[k+j*col]=="undefined"){str+="&nbsp";}  
+    // else{str+=arr[k+j*col];}  
+    // str+="</td>";  
+    // };//表格行结束  
+    // str+="</tr>";  
+    // };  
+    // str+="</tbody></table>";  
+    
+
+
+}
+function addListFromModal(){
     var oNum = document.getElementById('num').value;
     var oUser = document.getElementById('username').value;
     var oPwd = document.getElementById('pwd').value;
@@ -6,7 +63,24 @@ function addList(){
     var oAddre = document.getElementById('addre').value;
     var oYear = document.getElementById('year').value;
     var oAge = document.getElementById('age').value;
+    console.log(typeof oNum);
+    addList(oNum,oUser,oPwd,oBirth,oAddre,oYear,oAge);
+    students.push(new Studtent(oNum,oUser,oPwd,oBirth,oAddre,oYear,oAge));
+    console.log(students);
+}
+
+
+function addList(oNum,oUser,oPwd,oBirth,oAddre,oYear,oAge){
+   
     
+    // var oNum = document.getElementById('num').value;
+    // var oUser = document.getElementById('username').value;
+    // var oPwd = document.getElementById('pwd').value;
+    // var oBirth = document.getElementById('birth').value;
+    // var oAddre = document.getElementById('addre').value;
+    // var oYear = document.getElementById('year').value;
+    // var oAge = document.getElementById('age').value;
+    console.log(oNum,oUser,oPwd,oBirth,oAddre,oYear,oAge)
 
     var oTr = document.createElement('tr');
     var oTd1 = document.createElement('td');
@@ -54,13 +128,19 @@ function addList(){
     oTr.appendChild(oTd7);
     
     var olistTable = document.getElementById('listTable');
+    console.log(oTr)
     olistTable.appendChild(oTr);
 }
 
 function del(obj){
+    rowIndex = obj.parentNode.parentNode.rowIndex;  
+    console.log("rrrrowIndex",rowIndex)
+    students.splice(rowIndex - 2, 1);
+    console.log(students);
     var oParentnode = obj.parentNode.parentNode;
     var olistTable = document.getElementById('listTable');
     olistTable.removeChild(oParentnode);
+    
 }
 
 function checkAll(c){
@@ -77,14 +157,16 @@ function delAll(){
     for(var j=0;j<items.length;j++){    
         if(items[j].checked)//如果item被选中
         {
-            var oParentnode = items[j].parentNode.parentNode;
+            var oParentnode = items[j].parentNode.parentNode;console.log("oParentnode:"+oParentnode.rowIndex);
+            students.splice(oParentnode.rowIndex - 2, 1);
             olistTable.removeChild(oParentnode);
             j--;
         }
     }
+    console.log(students);
 }
 function modify(obj){
-
+    console.log("obj", obj)
     var oNum = document.getElementById('num');
         var oUser = document.getElementById('username');
         var oPwd = document.getElementById('pwd');
@@ -105,7 +187,7 @@ function modify(obj){
         oAge.value = aTd[7].innerHTML;
         console.log(aTd[4].innerHTML);
      
-
+        console.log("rrrrowIndex",rowIndex)
     // var table = document.getElementById("listTable");
     // var child = table.getElementsByTagName("tr")[this.index + 1];
     // var oNum = document.getElementById('num').value;
@@ -146,4 +228,25 @@ function update(){
     oMytable.rows[rowIndex].cells[5].innerHTML = oAddre.value;
     oMytable.rows[rowIndex].cells[6].innerHTML = oYear.value;
     oMytable.rows[rowIndex].cells[7].innerHTML = oAge.value;
+}
+
+display();
+//搜索功能
+function search() {
+    // 声明变量 
+    var input, filter, ul, li, a, i;
+    input = document.getElementById('myInput');
+    filter = input.value.toUpperCase();
+    // ul = document.getElementById("myUL");
+    tr = document.getElementsByTagName('tr');
+
+    // 循环所有列表，查找匹配项 
+    for (i = 0; i < students.length; i++) {
+        
+        if (students[i].toWatchString().toUpperCase().indexOf(filter) > -1) {
+            tr[i+2].style.display = "";
+        } else {
+            tr[i+2].style.display = "none";
+        }
+    }
 }
