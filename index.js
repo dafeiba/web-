@@ -82,6 +82,7 @@ function delAll(){
     }
 }
 function modify(obj){
+
     var oNum = document.getElementById('num');
     var oUser = document.getElementById('username');
     var oPwd = document.getElementById('pwd');
@@ -92,10 +93,11 @@ function modify(obj){
     console.log("11"+oNum.value);
     rowIndex = obj.parentNode.parentNode.rowIndex;  
       aTd[1].innerHTML = oNum.value;
-    oUser.value = aTd[2].innerHTML;
-    oPwd.value = aTd[3].innerHTML;
-    oBirth.value = aTd[4].innerHTML;
-    oAddre.value = aTd[5].innerHTML;
+      aTd[2].innerHTML = oUser.value;
+      aTd[3].innerHTML = oPwd.value;
+     aTd[4].innerHTML = oBirth.value;
+     aTd[5].innerHTML  = oAddre.value;
+     
 
     // var table = document.getElementById("listTable");
     // var child = table.getElementsByTagName("tr")[this.index + 1];
