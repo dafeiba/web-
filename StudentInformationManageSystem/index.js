@@ -20,13 +20,86 @@ var students = [new Studtent("1", "Mike", "Computer", "CS", '2016', '2', '20'),
     new Studtent("5", "Leonard", "Sport", "NBA", 2007, 2, 29),
     new Studtent("6", "Westbrook", "Sport", "NBA", 2007, 2, 29),
     new Studtent("7", "Davis", "Sport", "NBA", 2007, 2, 29)
-        ];
-// var myArray = new Array();
+                ];
+        // var myArray = new Array();
 // for(var i = 0; i < 25; i++){
 //     myArray[i] = i;
 // }
 // var col = 7;
-
+display();
+goPage(1,5)
+function goPage(pno,psize){  
+  
+  
+    var itable = document.getElementById("mytable");  
+    var num = mytable.rows.length;//表格行数  
+    var totalPage = 0;//总页数  
+    var pageSize = psize;//每页显示行数  
+  
+  
+    if((num-1)/pageSize > parseInt((num-1)/pageSize)){     
+       totalPage=parseInt((num-1)/pageSize)+1;     
+    }else{     
+       totalPage=parseInt((num-1)/pageSize);     
+    }     
+  
+  
+    var currentPage = pno;//当前页数  
+    var startRow = (currentPage - 1) * pageSize+1;//开始显示的行     
+    var endRow = currentPage * pageSize+1;//结束显示的行     
+    endRow = (endRow > num)? num : endRow;  
+  
+  
+    //表头始终显示  
+    for(i=0;i<1;i++){  
+        var irow = mytable.rows[i];  
+        irow.style.display = "block";  
+    }  
+      
+    //根据当前页数计算出的开始行、结束行 显示表格行  
+    for(var i=1;i<num;i++){  
+        var irow = mytable.rows[i];  
+        if(i>=startRow&&i<endRow){  
+            irow.style.display = "block";  
+        }else{  
+            irow.style.display = "none";  
+        }  
+    }  
+  
+  
+    var tempStr = "共"+(num-1)+"条记录 分"+totalPage+"页 当前第"+currentPage+"页 ";  
+  
+  
+    if(currentPage>1){  
+        tempStr += "<a href=\"#\" onClick=\"goPage("+(currentPage-1)+","+psize+")\">上一页</a>"  
+    }else{  
+       tempStr += "上一页 "; // <span style="white-space:pre">  </span>  
+    }  
+  
+  
+    if(currentPage<totalPage){  
+        tempStr += "<a href=\"#\" onClick=\"goPage("+(currentPage+1)+","+psize+")\">下一页</a>";  
+    }else{  
+        tempStr += "下一页 ";//<span style="white-space:pre">  </span>  
+    }  
+  
+  
+    if(currentPage>1){  
+        tempStr += "<a href=\"#\" onClick=\"goPage("+(1)+","+psize+")\">首页</a>";  
+    }else{  
+        tempStr += "首页 ";  
+    }  
+  
+  
+    if(currentPage<totalPage){  
+        tempStr += "<a href=\"#\" onClick=\"goPage("+(totalPage)+","+psize+")\">尾页</a>";  
+    }else{  
+        tempStr += "尾页 ";  
+    }  
+  
+  
+    document.getElementById("barcon").innerHTML = tempStr;  
+}  
 function display(){
     for(var i = 0; i < students.length; i++){
         var oNum = students[i].student_id;
@@ -37,6 +110,11 @@ function display(){
         var oYear = students[i].clazz+'';
         var oAge = students[i].age + "";
         addList(oNum,oUser,oPwd,oBirth,oAddre,oYear,oAge);
+        var len = 2;
+        var count = 0;
+
+
+
     }
     // var lines=Math.ceil(arr.length/col);//很关键的一步，这里为生成表格的行数  
     // var str="<table><tbody>";//表头  
@@ -64,6 +142,7 @@ function addListFromModal(){
     var oYear = document.getElementById('year').value;
     var oAge = document.getElementById('age').value;
     console.log(typeof oNum);
+    
     addList(oNum,oUser,oPwd,oBirth,oAddre,oYear,oAge);
     students.push(new Studtent(oNum,oUser,oPwd,oBirth,oAddre,oYear,oAge));
     console.log(students);
@@ -128,7 +207,7 @@ function addList(oNum,oUser,oPwd,oBirth,oAddre,oYear,oAge){
     oTr.appendChild(oTd7);
     
     var olistTable = document.getElementById('listTable');
-    console.log(oTr)
+    console.log(oTr);
     olistTable.appendChild(oTr);
 }
 
@@ -231,7 +310,7 @@ function update(){
     oMytable.rows[rowIndex].cells[7].innerHTML = oAge.value;
 }
 
-display();
+
 //搜索功能
 function search() {
     // 声明变量 
