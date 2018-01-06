@@ -14,15 +14,15 @@
     <table class="table table-hover table-bordered" id="mytable">
         <thead>
             <tr>
-                <th>选中</th>
-                <th>序号</th>
-                <th>学号</th>
-                <th>姓名</th>
-                <th>学院</th>
-                <th>专业</th>
-                <th>年级</th>
-                <th>年龄</th>
-                <th>编辑</th>
+                <th data-field="Sex" data-width="120px">选中</th>
+                <th data-field="xuhao" data-width="120px">序号</th>
+                <th data-field="xuehao" data-width="120px">学号</th>
+                <th data-field="name" data-width="120px">姓名</th>
+                <th data-field="xueyuan" data-width="120px">学院</th>
+                <th data-field="zhuanye" data-width="120px">专业</th>
+                <th data-field="grate" data-width="120px">年级</th>
+                <th data-field="age" data-width="120px">年龄</th>
+                <th data-field="bianji" data-width="120px">编辑</th>
             </tr>
             <tr>
                 <td>
@@ -56,7 +56,7 @@
             </tr> -->
         </tbody>
     </table>
-    <table>  
+    <table class="table table-hover table-bordered">  
             <tr>  
               <td>  
                 <div id="barcon" name="barcon"></div>  
@@ -166,9 +166,7 @@
     <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
     <script src="index.js" >
-        $(function () {   
-    goPage(1,5);//每页十行  
-} 
+     
     </script>
     
 </body>

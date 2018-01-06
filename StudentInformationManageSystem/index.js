@@ -13,13 +13,17 @@ function Studtent(student_id, name, college, major, grade, clazz, age) {
 }
 
 
-var students = [new Studtent("1", "Mike", "Computer", "CS", '2016', '2', '20'), 
-    new Studtent("2", "Tom", "Computer", "CS", 2015, 2, 20), 
-    new Studtent("3", "James", "Sport", "NBA", 2003, 2, 33), 
-    new Studtent("4", "Curry", "Sport", "NBA", 2007, 2, 29), 
-    new Studtent("5", "Leonard", "Sport", "NBA", 2007, 2, 29),
-    new Studtent("6", "Westbrook", "Sport", "NBA", 2007, 2, 29),
-    new Studtent("7", "Davis", "Sport", "NBA", 2007, 2, 29)
+var students = [new Studtent("1", "11603080101", "李建飞", "计算机与工程学院", '软件工程', '2016级', '20'), 
+    new Studtent("2", "11603080102", "何玮康", "计算机与工程学院", '软件工程', '2016级', '20'), 
+    new Studtent("3", "11603080103", "潘明月", "计算机与工程学院", '软件工程', '2016级', '20'), 
+    new Studtent("4", "11603080104", "卢思其", "计算机与工程学院", '软件工程', '2016级', '20'), 
+    new Studtent("5", "11603080105", "刘翰澄", "计算机与工程学院", '软件工程', '2016级', '20'),
+    new Studtent("6", "11603080106", "陈凤", "计算机与工程学院", '软件工程', '2016级', '20'),
+    new Studtent("7", "11603080107", "王浩吉", "计算机与工程学院", '软件工程', '2016级', '20'),
+    new Studtent("8", "11603080108", "张森林", "计算机与工程学院", '软件工程', '2016级', '20'),
+    new Studtent("9", "11603080109", "胡倩", "计算机与工程学院", '软件工程', '2016级', '20'),
+    new Studtent("10", "116030801010", "黄飞", "计算机与工程学院", '软件工程', '2016级', '20'),
+
                 ];
         // var myArray = new Array();
 // for(var i = 0; i < 25; i++){
@@ -27,7 +31,8 @@ var students = [new Studtent("1", "Mike", "Computer", "CS", '2016', '2', '20'),
 // }
 // var col = 7;
 display();
-goPage(1,5)
+ goPage(1,5);
+
 function goPage(pno,psize){  
   
   
@@ -53,14 +58,15 @@ function goPage(pno,psize){
     //表头始终显示  
     for(i=0;i<1;i++){  
         var irow = mytable.rows[i];  
-        irow.style.display = "block";  
+         irow.style.display = "";  
+         
     }  
       
     //根据当前页数计算出的开始行、结束行 显示表格行  
     for(var i=1;i<num;i++){  
         var irow = mytable.rows[i];  
         if(i>=startRow&&i<endRow){  
-            irow.style.display = "block";  
+            irow.style.display = "";  
         }else{  
             irow.style.display = "none";  
         }  
@@ -100,6 +106,7 @@ function goPage(pno,psize){
   
     document.getElementById("barcon").innerHTML = tempStr;  
 }  
+
 function display(){
     for(var i = 0; i < students.length; i++){
         var oNum = students[i].student_id;
